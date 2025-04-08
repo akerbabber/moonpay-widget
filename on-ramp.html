@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoonPay Integration</title>
 
-    <!-- Adds the MoonPay SDK as a script to your HTML file -->
+    <!-- Adds the MoonPay SDK as a script -->
     <script defer src="https://static.moonpay.com/web-sdk/v1/moonpay-web-sdk.min.js"></script>
 
-    <!-- Initialize the MoonPay SDK immediately upon page load -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const moonpaySdk = window.MoonPayWebSdk.init({
@@ -16,13 +15,14 @@
                 environment: "sandbox",
                 variant: "overlay",
                 params: {
-                    apiKey: "pk_live_kwqISUltMfask3tLhskYEMDcAzHEhoO", // Replace with your MoonPay publishable API key
-                    baseCurrencyCode: "usd",
-                    baseCurrencyAmount: "30",
-                    defaultCurrencyCode: "eth"
-                }});
+                    apiKey: "", // Use your sandbox API key
+                    baseCurrencyCode: "gbp",
+                    baseCurrencyAmount: 100, // using number instead of string
+                    defaultCurrencyCode: "btc",
+                    walletAddress: "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+                }
+            });
 
-            // Open widget
             moonpaySdk.show();
         });
     </script>
